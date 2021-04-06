@@ -24,14 +24,14 @@ class MyArray {
   add(value, index) {
     if (index < 0 || index > this.length) return;
 
-    this.shiftRight(index);
+    this._shiftRight(index);
     this.data[index] = value;
   } // O(n)
 
   remove(index) {
     if (index < 0 || index > this.length) return;
 
-    this.shiftLeft(index);
+    this._shiftLeft(index);
     delete this.data[this.length];
   } // O(n)
 
@@ -54,14 +54,14 @@ class MyArray {
   }
 
   /* helper methods */
-  shiftRight(index) {
+  _shiftRight(index) {
     this.length++;
     for (let i = this.length - 1; i >= index; i--) {
       this.data[i] = this.data[i - 1];
     }
   } // O(n)
 
-  shiftLeft(index) {
+  _shiftLeft(index) {
     this.length--;
     for (let i = index; i <= this.length - 1; i++) {
       this.data[i] = this.data[i + 1];
