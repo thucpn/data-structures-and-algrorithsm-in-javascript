@@ -1,18 +1,16 @@
 /**
- * Hiện thực hoá Doubly Linked List bằng Object trong JS
+ * Hiện thực hoá Circularly Linked List bằng Object trong JS
  */
 
 class Node {
   constructor(value) {
     this.value = value;
-    this.prev = null;
     this.next = null;
   }
 }
 
-class MyDoublyLinkedList {
+class MyCircularlyLinkedList {
   constructor() {
-    this.head = null;
     this.tail = null;
     this.length = 0;
   }
@@ -20,30 +18,19 @@ class MyDoublyLinkedList {
   get(index) {
     if (this._isEmpty() || index > this.length - 1 || index < 0) return null;
 
-    if (index < this.length / 2) {
-      let curNode = this.head;
-      let count = index;
-      while (count > 0) {
-        curNode = curNode.next;
-        count--;
-      }
-
-      return curNode;
-    } else {
-      let curNode = this.tail;
-      let count = this.length - 1 - index;
-      while (count > 0) {
-        curNode = curNode.prev;
-        count--;
-      }
-
-      return curNode;
+    let curNode = this.tail.next;
+    let count = index;
+    while (count > 0) {
+      curNode = curNode.next;
+      count--;
     }
-  } // O(n) (<= O(n/2))
+
+    return curNode;
+  } // O(n)
 
   getFirst() {
     if (this._isEmpty()) return null;
-    return this.head;
+    return this.tail.next;
   } // O(1)
 
   getLast() {
@@ -54,7 +41,7 @@ class MyDoublyLinkedList {
   traversal() {
     let result = [];
 
-    let curNode = this.head;
+    let curNode = this.tail.next;
     let count = this.length - 1;
     while (count >= 0) {
       result.push(curNode.value);
@@ -66,7 +53,7 @@ class MyDoublyLinkedList {
   } // O(n)
 
   search(value) {
-    let curNode = this.head;
+    let curNode = this.tail.next;
     let count = this.length - 1;
     while (count >= 0) {
       if (curNode.value === value) return curNode;
@@ -93,45 +80,37 @@ class MyDoublyLinkedList {
     const curNode = beforeNode.next;
 
     newNode.next = curNode;
-    curNode.prev = newNode;
     beforeNode.next = newNode;
-    newNode.prev = beforeNode;
 
     this.length++;
-  } // O(n) (<= O(n/2))
+  } // O(n)
 
   addFirst(value) {
     const newNode = new Node(value);
 
     if (this._isEmpty()) {
       this.tail = newNode;
+      this.tail.next = this.tail;
     } else {
-      newNode.next = this.head;
-      this.head.prev = newNode;
+      newNode.next = this.tail.next;
+      this.tail.next = newNode;
     }
 
-    this.head = newNode;
     this.length++;
   } // O(1)
 
   addLast(value) {
-    const newNode = new Node(value);
+    this.addFirst(value);
 
-    if (this._isEmpty()) {
-      this.head = newNode;
-    } else {
-      this.tail.next = newNode;
-      newNode.prev = this.tail;
+    if (!this._isEmpty() && this.length > 1) {
+      this.tail = this.tail.next;
     }
-
-    this.tail = newNode;
-    this.length++;
   } // O(1)
 
   remove(index) {
     if (this._isEmpty() || index > this.length - 1 || index < 0) return;
     if (this.length === 1) {
-      this.head = this.tail = null;
+      this.tail = null;
       return;
     }
     if (index === 0) {
@@ -145,36 +124,39 @@ class MyDoublyLinkedList {
 
     const beforeNode = this.get(index - 1);
     const removeNode = beforeNode.next;
-    const afterNode = removeNode.next;
-
     beforeNode.next = removeNode.next;
-    afterNode.prev = removeNode.prev;
 
     this.length--;
-  } // O(n) (<= O(n/2))
+  } // O(n)
 
   removeFirst() {
     if (this._isEmpty()) return;
     if (this.length === 1) {
-      this.head = this.tail = null;
+      this.tail = null;
       return;
     }
 
-    this.head.next.prev = null;
-    this.head = this.head.next;
+    this.tail.next = this.tail.next.next;
     this.length--;
   } // O(1)
 
   removeLast() {
     if (this._isEmpty()) return;
     if (this.length === 1) {
-      this.head = this.tail = null;
+      this.tail = null;
       return;
     }
 
-    this.tail.prev.next = null;
-    this.tail = this.tail.prev;
+    const almostLastNode = this.get(this.length - 2);
+    almostLastNode.next = this.tail.next;
+    this.tail = almostLastNode;
     this.length--;
+  } // O(n)
+
+  rotate() {
+    if (!this._isEmpty() && this.length > 1) {
+      this.tail = this.tail.next;
+    }
   } // O(1)
 
   _isEmpty() {
@@ -182,9 +164,10 @@ class MyDoublyLinkedList {
   } // O(1)
 }
 
-const myDLL = new MyDoublyLinkedList();
-myDLL.addLast('a');
-myDLL.addLast('b');
-myDLL.addLast('c');
+const myCLL = new MyCircularlyLinkedList();
+myCLL.addLast('a');
+myCLL.addLast('b');
+myCLL.addLast('c');
 
-console.log(myDLL);
+console.log(myCLL);
+console.log(myCLL.search('c'));
