@@ -1,15 +1,16 @@
 /**
- * Hiện thực hoá Singly Linked List bằng Object trong JS
+ * Hiện thực hoá Doubly Linked List bằng Object trong JS
  */
 
 class Node {
   constructor(value) {
     this.value = value;
+    this.prev = null;
     this.next = null;
   }
 }
 
-class MySinglyLinkedList {
+class MyDoublyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -19,15 +20,26 @@ class MySinglyLinkedList {
   get(index) {
     if (this._isEmpty() || index > this.length - 1 || index < 0) return null;
 
-    let curNode = this.head;
-    let count = index;
-    while (count > 0) {
-      curNode = curNode.next;
-      count--;
-    }
+    if (index < this.length / 2) {
+      let curNode = this.head;
+      let count = index;
+      while (count > 0) {
+        curNode = curNode.next;
+        count--;
+      }
 
-    return curNode;
-  } // O(n)
+      return curNode;
+    } else {
+      let curNode = this.tail;
+      let count = this.length - 1 - index;
+      while (count > 0) {
+        curNode = curNode.prev;
+        count--;
+      }
+
+      return curNode;
+    }
+  } // O(n) (<= O(n/2))
 
   getFirst() {
     if (this._isEmpty()) return null;
@@ -79,12 +91,14 @@ class MySinglyLinkedList {
     const newNode = new Node(value);
     const beforeNode = this.get(index - 1);
     const curNode = beforeNode.next;
-    
+
     newNode.next = curNode;
+    curNode.prev = newNode;
     beforeNode.next = newNode;
+    newNode.prev = beforeNode;
 
     this.length++;
-  } // O(n)
+  } // O(n) (<= O(n/2))
 
   addFirst(value) {
     const newNode = new Node(value);
@@ -93,6 +107,7 @@ class MySinglyLinkedList {
       this.tail = newNode;
     } else {
       newNode.next = this.head;
+      this.head.prev = newNode;
     }
 
     this.head = newNode;
@@ -106,6 +121,7 @@ class MySinglyLinkedList {
       this.head = newNode;
     } else {
       this.tail.next = newNode;
+      newNode.prev = this.tail;
     }
 
     this.tail = newNode;
@@ -129,10 +145,13 @@ class MySinglyLinkedList {
 
     const beforeNode = this.get(index - 1);
     const removeNode = beforeNode.next;
+    const afterNode = removeNode.next;
+
     beforeNode.next = removeNode.next;
+    afterNode.prev = removeNode.prev;
 
     this.length--;
-  } // O(n)
+  } // O(n) (<= O(n/2))
 
   removeFirst() {
     if (this._isEmpty()) return;
@@ -141,6 +160,7 @@ class MySinglyLinkedList {
       return;
     }
 
+    this.head.next.prev = null;
     this.head = this.head.next;
     this.length--;
   } // O(1)
@@ -152,40 +172,20 @@ class MySinglyLinkedList {
       return;
     }
 
-    const almostLastNode = this.get(this.length - 2);
-    this.tail = almostLastNode;
-    almostLastNode.next = null;
+    this.tail.prev.next = null;
+    this.tail = this.tail.prev;
     this.length--;
-  } // O(n)
-
-  reverse() {
-    if (this._isEmpty() || this.length === 1) return;
-
-    let first = this.head;
-    let second = first.next;
-
-    this.tail = this.head;
-    this.head.next = null;
-
-    while (second) {
-      const temp = second.next;
-      second.next = first;
-      first = second;
-      second = temp;
-    }
-
-    this.head = first;
-  } // O(n)
+  } // O(1)
 
   _isEmpty() {
     return this.length === 0;
   } // O(1)
 }
 
-const mySLL = new MySinglyLinkedList();
-mySLL.addLast('a');
-mySLL.addLast('b');
-mySLL.addLast('c');
+const myDLL = new MyDoublyLinkedList();
+myDLL.addLast('a');
+myDLL.addLast('b');
+myDLL.addLast('c');
 
-mySLL.reverse();
-console.log(mySLL);
+
+console.log(myDLL);
