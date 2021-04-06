@@ -7,7 +7,6 @@ class MyArray {
     this.data = {};
   }
 
-  /* main methods */
   get(index) {
     return this.data[index];
   } // O(1)
@@ -28,6 +27,15 @@ class MyArray {
     this.data[index] = value;
   } // O(n)
 
+  addFirst(value) {
+    this.add(value, 0);
+  } // O(n)
+
+  addLast(value) {
+    this.length++;
+    this.data[this.length - 1] = value;
+  } // O(1)
+
   remove(index) {
     if (index < 0 || index > this.length) return;
 
@@ -35,25 +43,15 @@ class MyArray {
     delete this.data[this.length];
   } // O(n)
 
-  addFirst(value) {
-    this.add(value, 0);
-  }
-
-  addLast(value) {
-    this.length++;
-    this.data[this.length - 1] = value;
-  }
-
   removeFirst() {
     this.remove(0);
-  }
+  } // O(n)
 
   removeLast() {
     delete this.data[this.length - 1];
     this.length--;
-  }
+  } // O(1)
 
-  /* helper methods */
   _shiftRight(index) {
     this.length++;
     for (let i = this.length - 1; i >= index; i--) {
@@ -69,7 +67,6 @@ class MyArray {
   } // O(n)
 }
 
-// demo execution
 const myArray = new MyArray();
 myArray.add('a', 0);
 myArray.add('b', 1);
