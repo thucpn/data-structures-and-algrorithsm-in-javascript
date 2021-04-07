@@ -1,7 +1,7 @@
 /**
  * Hiện thực hoá array bằng object trong js
  */
-class MyArray {
+class Array {
   constructor() {
     this.length = 0;
     this.data = {};
@@ -67,7 +67,7 @@ class MyArray {
   } // O(n)
 }
 
-const myArray = new MyArray();
+const myArray = new Array();
 myArray.add('a', 0);
 myArray.add('b', 1);
 myArray.add('c', 2);

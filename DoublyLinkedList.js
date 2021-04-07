@@ -10,7 +10,7 @@ class Node {
   }
 }
 
-class MyDoublyLinkedList {
+class DoublyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -182,7 +182,7 @@ class MyDoublyLinkedList {
   } // O(1)
 }
 
-const myDLL = new MyDoublyLinkedList();
+const myDLL = new DoublyLinkedList();
 myDLL.addLast('a');
 myDLL.addLast('b');
 myDLL.addLast('c');

@@ -9,7 +9,7 @@ class Node {
   }
 }
 
-class MySinglyLinkedList {
+class SinglyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -182,7 +182,7 @@ class MySinglyLinkedList {
   } // O(1)
 }
 
-const mySLL = new MySinglyLinkedList();
+const mySLL = new SinglyLinkedList();
 mySLL.addLast('a');
 mySLL.addLast('b');
 mySLL.addLast('c');

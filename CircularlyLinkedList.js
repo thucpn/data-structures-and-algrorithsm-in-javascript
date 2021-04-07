@@ -9,7 +9,7 @@ class Node {
   }
 }
 
-class MyCircularlyLinkedList {
+class CircularlyLinkedList {
   constructor() {
     this.tail = null;
     this.length = 0;
@@ -164,7 +164,7 @@ class MyCircularlyLinkedList {
   } // O(1)
 }
 
-const myCLL = new MyCircularlyLinkedList();
+const myCLL = new CircularlyLinkedList();
 myCLL.addLast('a');
 myCLL.addLast('b');
 myCLL.addLast('c');

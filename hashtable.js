@@ -1,7 +1,7 @@
 /**
  * Hiện thực HashTable (tích hợp Array để giải quyết Collision)
  */
-class MyHashTable {
+class HashTable {
   constructor(size) {
     this.size = size;
     this.data = new Array(size);
@@ -60,7 +60,7 @@ class MyHashTable {
   } // O(n)
 }
 
-const myHashTable = new MyHashTable(50);
+const myHashTable = new HashTable(50);
 myHashTable.set('apples', 9);
 myHashTable.set('apples', 10);
 myHashTable.set('grapes', 10000);
