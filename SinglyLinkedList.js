@@ -79,7 +79,7 @@ class SinglyLinkedList {
     const newNode = new Node(value);
     const beforeNode = this.get(index - 1);
     const curNode = beforeNode.next;
-    
+
     newNode.next = curNode;
     beforeNode.next = newNode;
 
@@ -187,5 +187,6 @@ mySLL.addLast('a');
 mySLL.addLast('b');
 mySLL.addLast('c');
 
-mySLL.reverse();
-console.log(mySLL);
+// console.log(mySLL);
+
+module.exports = SinglyLinkedList;
