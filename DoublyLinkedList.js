@@ -187,4 +187,6 @@ myDLL.addLast('a');
 myDLL.addLast('b');
 myDLL.addLast('c');
 
-console.log(myDLL);
+// console.log(myDLL);
+
+module.exports = DoublyLinkedList;
