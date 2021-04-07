@@ -13,10 +13,14 @@ class ArrayStack {
 
   push(value) {
     this.data.push(value);
+    return value;
   }
 
   pop() {
+    const result = this.top();
     this.data.pop();
+    
+    return result;
   }
 }
 

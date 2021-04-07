@@ -2,29 +2,35 @@
  * Hiện thực hoá Stack bằng LinkedList
  */
 
-const SinglyLinkedList = require('./SinglyLinkedList');
+ const SinglyLinkedList = require('./SinglyLinkedList');
 
-class LinkedStack {
-  constructor() {
-    this.data = new SinglyLinkedList();
-  }
+ class LinkedStack {
+   constructor() {
+     this.data = new SinglyLinkedList();
+   }
+ 
+   top() {
+     return this.data.head.value;
+   }
+ 
+   push(value) {
+     this.data.addFirst(value);
+     return value;
+   }
+ 
+   pop() {
+     const result = this.top();
 
-  top() {
-    return this.data.head.value;
-  }
+     this.data.removeFirst();
 
-  push(value) {
-    this.data.addFirst(value);
-  }
-
-  pop() {
-    this.data.removeFirst();
-  }
-}
-
-const myLinkedStack = new LinkedStack();
-myLinkedStack.push('a');
-myLinkedStack.push('b');
-myLinkedStack.push('c');
-
-console.log(myLinkedStack);
+     return result;
+   }
+ }
+ 
+ const myLinkedStack = new LinkedStack();
+ myLinkedStack.push('a');
+ myLinkedStack.push('b');
+ myLinkedStack.push('c');
+ 
+ console.log(myLinkedStack);
+ 
