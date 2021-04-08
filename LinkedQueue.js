@@ -9,6 +9,10 @@ class LinkedQueue {
     this.data = new SinglyLinkedList();
   }
 
+  size() {
+    return this.data.length;
+  }
+
   top() {
     return this.data.head.value;
   }
@@ -22,7 +26,7 @@ class LinkedQueue {
     const result = this.top();
 
     this.data.removeFirst();
-    
+
     return result;
   }
 }
@@ -32,4 +36,6 @@ myLinkedQueue.enqueue('a');
 myLinkedQueue.enqueue('b');
 myLinkedQueue.enqueue('c');
 
-console.log(myLinkedQueue);
+// console.log(myLinkedQueue);
+
+module.exports = LinkedQueue;

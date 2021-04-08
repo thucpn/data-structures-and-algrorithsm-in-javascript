@@ -138,6 +138,7 @@ class SinglyLinkedList {
     if (this._isEmpty()) return;
     if (this.length === 1) {
       this.head = this.tail = null;
+      this.length = 0;
       return;
     }
 
@@ -149,6 +150,7 @@ class SinglyLinkedList {
     if (this._isEmpty()) return;
     if (this.length === 1) {
       this.head = this.tail = null;
+      this.length = 0;
       return;
     }
 
