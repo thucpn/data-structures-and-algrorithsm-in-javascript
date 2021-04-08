@@ -61,7 +61,7 @@ class BinaryTree {
     this._visit(node);
     this.preorderTraversal(node.left);
     this.preorderTraversal(node.right);
-  }
+  } // O(n)
 
   // Inorder Traversal using recursion
   // Đào sâu bên trái -> Print thông tin node -> Đào sâu bên phải
@@ -71,7 +71,7 @@ class BinaryTree {
     this.inorderTraversal(node.left);
     this._visit(node);
     this.inorderTraversal(node.right);
-  }
+  } // O(n)
 
   // Postorder Traversal using recursion
   // Đào sâu xuống các node con rồi mới print thông tin của Node cha
@@ -81,7 +81,7 @@ class BinaryTree {
     this.postorderTraversal(node.left);
     this.postorderTraversal(node.right);
     this._visit(node);
-  }
+  } // O(n)
 
   _visit(node) {
     console.log(node.value);

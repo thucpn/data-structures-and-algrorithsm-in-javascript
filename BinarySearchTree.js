@@ -170,7 +170,7 @@ class BinarySearchTree extends BinaryTree {
     removeNode = null;
 
     return replaceNode;
-  }
+  } // O(logn)
 
   // node nằm bên trái nhất của cây
   _leftMost(root) {
