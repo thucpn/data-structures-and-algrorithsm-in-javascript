@@ -1,3 +1,7 @@
+/**
+ * Hiện thực hoá bài toán tháp hanoi
+ */
+
 function move(n, x, y) {
   if (n === 1) return console.log('Chuyển 1 đĩa từ cọc ' + x + ' sang cọc ' + y);
 

@@ -1,3 +1,13 @@
+/**
+ * Hiện thực hoá các giải thuật sort:
+ * > Bubble sort
+ * > Selection sort
+ * > Insertion sort
+ * > Merge sort
+ * > Quick sort
+ * > Heap sort
+ */
+
 const swap = (array, x, y) => {
   const temp = array[x];
   array[x] = array[y];

@@ -2,7 +2,7 @@
  * Implement BinaryTree
  */
 
-const LinkedQueue = require('../LinkedQueue');
+const LinkedQueue = require('../ds5-queue/LinkedQueue');
 
 class Node {
   constructor(value) {

@@ -7,6 +7,10 @@ class ArrayStack {
     this.data = [];
   }
 
+  size() {
+    return this.data.length;
+  }
+
   top() {
     return this.data[this.data.length - 1];
   }
@@ -19,7 +23,7 @@ class ArrayStack {
   pop() {
     const result = this.top();
     this.data.pop();
-    
+
     return result;
   }
 }
@@ -29,4 +33,6 @@ myArrayStack.push('a');
 myArrayStack.push('b');
 myArrayStack.push('c');
 
-console.log(myArrayStack);
+// console.log(myArrayStack);
+
+module.exports = ArrayStack;
