@@ -2,7 +2,7 @@
  * Hiện thực hoá Queue bằng LinkedList
  */
 
-const SinglyLinkedList = require('./SinglyLinkedList');
+const SinglyLinkedList = require('../ds3-linkedlist/SinglyLinkedList');
 
 class LinkedQueue {
   constructor() {

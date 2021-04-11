@@ -2,7 +2,7 @@
  * Hiện thực hoá Dequeue bằng DoublyLinkedList
  */
 
-const DoublyLinkedList = require('./DoublyLinkedList');
+const DoublyLinkedList = require('../ds3-linkedlist/DoublyLinkedList');
 
 class Dequeue {
   constructor() {

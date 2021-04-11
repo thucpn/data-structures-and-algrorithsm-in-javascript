@@ -2,7 +2,7 @@
  * Hiện thực hoá Stack bằng LinkedList
  */
 
- const SinglyLinkedList = require('./SinglyLinkedList');
+ const SinglyLinkedList = require('../ds3-linkedlist/SinglyLinkedList');
 
  class LinkedStack {
    constructor() {

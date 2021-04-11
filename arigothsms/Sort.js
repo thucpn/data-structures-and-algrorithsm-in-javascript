@@ -178,8 +178,8 @@ const arr = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 // bubbleSort(arr);
 // selectionSort(arr);
 // insertionSort(arr);
+// heapSort(arr);
 // mergeSort(arr);
-// quickSort(arr);
-heapSort(arr);
+quickSort(arr);
 
 console.log(arr);
