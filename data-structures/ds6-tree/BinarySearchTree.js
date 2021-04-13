@@ -33,8 +33,6 @@ class BinarySearchTree extends BinaryTree {
   } // O(logn)
 
   add(value) {
-    this.size++;
-
     const newNode = new Node(value);
 
     if (!this.root) {
@@ -48,16 +46,21 @@ class BinarySearchTree extends BinaryTree {
         if (!curNode.left) {
           curNode.left = newNode;
           newNode.parent = curNode;
+          this.size++;
           return;
         }
         curNode = curNode.left;
-      } else {
+      } else if (value > curNode.value) {
         if (!curNode.right) {
           curNode.right = newNode;
           newNode.parent = curNode;
+          this.size++;
           return;
         }
         curNode = curNode.right;
+      } else {
+        // no duplicate
+        return;
       }
     }
   } // O(logn)

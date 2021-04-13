@@ -380,7 +380,9 @@ myGraph.addEdge('I', 'F');
 // myGraph.breadFirstTraversal('A');
 // myGraph.depthFirstTraversal('A');
 
+////////////////////////////////////////
 // test dijkstra & floyd & primMST
+
 // input graph in matrix
 // 0 là khoảng cách từ 1 điểm tới nó
 // Infinity là giữa 2 vertex không có cạnh nối
@@ -399,4 +401,4 @@ const graphDemo = [
 // myGraph.dijkstra(graphDemo, 0);
 // myGraph.floyd(graphDemo);
 // myGraph.primMST(graphDemo);
-myGraph.kruskalMST(graphDemo);
+// myGraph.kruskalMST(graphDemo);
