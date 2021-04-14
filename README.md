@@ -1,3 +1,3 @@
 # Data Structures in Javascript
 
-![Data Structures Map](https://i.ibb.co/74P1JzP/data-structure-map.png)
+![Data Structures Map](https://i.ibb.co/v4cJs3P/data-structure-map.png)
