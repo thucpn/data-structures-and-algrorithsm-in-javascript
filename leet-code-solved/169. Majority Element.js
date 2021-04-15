@@ -4,8 +4,8 @@
  * @param {number[]} nums
  * @return {number}
  *
- * Time:
- * Space:
+ * Time: O(n)
+ * Space: O(n)
  */
 var majorityElement = function (nums) {
   const hashtable = {};
