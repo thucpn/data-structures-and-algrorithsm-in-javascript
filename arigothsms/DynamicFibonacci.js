@@ -14,4 +14,4 @@ const dynamicFib = () => {
   };
 };
  
-console.log(dynamicFib()(3));
+console.log(dynamicFib()(3)); 
