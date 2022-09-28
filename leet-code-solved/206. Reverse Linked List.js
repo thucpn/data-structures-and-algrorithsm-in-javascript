@@ -15,23 +15,22 @@
  * Space: O(1)
  */
 var reverseList = function (head) {
-  if (!head || !head.next) return head;
+	if (!head || !head.next) return head;
 
-  const tail = head;
+	let n1 = head;
+	let n2 = n1.next;
+	let temp;
 
-  let n1 = head;
-  let n2 = n1.next;
-  let temp;
+	while (n2) {
+		temp = n2.next;
+		n2.next = n1;
+		n1 = n2;
+		n2 = temp;
+	}
 
-  while (n2) {
-    temp = n2.next;
-    n2.next = n1;
-    n1 = n2;
-    n2 = temp;
-  }
+	const tail = head;
+	head = n1;
+	tail.next = null;
 
-  head = n1;
-  tail.next = null;
-
-  return head;
+	return head;
 };
