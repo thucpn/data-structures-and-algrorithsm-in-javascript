@@ -34,15 +34,9 @@ Array.prototype.myReduce = function (callback, initialValue) {
 	return result;
 };
 
-Array.prototype.mySort = function (callback) {
-	let result = initialValue;
-
-	for (let i = 0; i < this.length; i++) {
-		const element = this[i];
-		result = callback(result, element, i, this);
-	}
-
-	return result;
+Array.prototype.myBind = function (refObject, ...args) {
+	const fn = this;
+	return function () {
+		fn.call(refObject, args);
+	};
 };
-
-console.log([1, 2, 3].sort((a, b) => b - a));
