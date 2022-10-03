@@ -1,11 +1,11 @@
 const debounce = function (callback, delay) {
 	let timer;
 
-	return function () {
+	return function (...args) {
 		let context = this;
 		clearTimeout(timer);
 		timer = setTimeout(() => {
-			callback.apply(context, arguments);
+			callback.apply(context, args);
 		}, delay);
 	};
 };
