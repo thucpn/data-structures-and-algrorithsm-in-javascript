@@ -61,3 +61,18 @@
 	left: 50%;
 	top: 20px;
 }
+
+.tooltip-wrapper {
+	position: relative;
+}
+
+.tooltip {
+	width: 150px;
+	background: lightgrey;
+	height: 30px;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -20px;
+}
