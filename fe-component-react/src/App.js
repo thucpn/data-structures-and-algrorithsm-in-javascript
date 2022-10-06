@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Rating from './components/Rating';
 import Dropdown from './components/Dropdown';
 import Folder from './components/Folder';
+import Countdown from './components/Countdown';
 
 const projectType = {
 	rating: 'rating',
@@ -48,6 +49,7 @@ function App() {
 					{type === projectType.rating && <Rating />}
 					{type === projectType.dropdown && <Dropdown />}
 					{type === projectType.folder && <Folder />}
+					{type === projectType.countdown && <Countdown />}
 				</main>
 			</div>
 		</div>
