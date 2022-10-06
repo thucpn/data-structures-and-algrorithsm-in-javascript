@@ -76,3 +76,16 @@
 	transform: translateX(-50%);
 	top: -20px;
 }
+
+.square {
+	width: 100px;
+	height: 100px;
+	background: lightblue;
+	margin-bottom: 3px;
+	font-size: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+}
