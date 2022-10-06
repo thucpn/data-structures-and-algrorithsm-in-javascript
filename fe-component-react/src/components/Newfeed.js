@@ -37,12 +37,6 @@ export default function Newfeed() {
 		});
 
 		if (containerRef.current) observer.observe(containerRef.current);
-
-		return () => {
-			if (containerRef.current) {
-				observer.unobserve(containerRef.current);
-			}
-		};
 	}, [fetchNews]);
 
 	return (

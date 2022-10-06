@@ -9,6 +9,7 @@ import Tooltip from './components/Tooltip';
 import Slider from './components/Slider';
 import Newfeed from './components/Newfeed';
 import Tiktactoe from './components/Tiktactoe';
+import Autocomplete from './components/Autocomplete';
 
 const projectType = {
 	rating: 'rating',
@@ -20,12 +21,12 @@ const projectType = {
 	slider: 'slider',
 	newfeed: 'newfeed',
 	tiktactoe: 'tiktactoe',
+	autocomplete: 'autocomplete',
 };
 
 function App() {
 	const [type, setType] = useState(projectType.rating);
 
-	console.log(type);
 	return (
 		<div id='toast-container'>
 			<div>
@@ -64,6 +65,7 @@ function App() {
 						{type === projectType.slider && <Slider />}
 						{type === projectType.newfeed && <Newfeed />}
 						{type === projectType.tiktactoe && <Tiktactoe />}
+						{type === projectType.autocomplete && <Autocomplete />}
 					</main>
 				</div>
 			</div>
