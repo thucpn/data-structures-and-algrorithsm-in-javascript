@@ -4,14 +4,16 @@ import Rating from './components/Rating';
 import Dropdown from './components/Dropdown';
 import Folder from './components/Folder';
 import Countdown from './components/Countdown';
+import Toast from './components/Toast';
+import Tooltip from './components/Tooltip';
 
 const projectType = {
 	rating: 'rating',
 	dropdown: 'dropdown',
 	folder: 'folder',
+	countdown: 'countdown',
 	toast: 'toast',
 	tooltip: 'tooltip',
-	countdown: 'countdown',
 };
 
 function App() {
@@ -19,38 +21,42 @@ function App() {
 
 	console.log(type);
 	return (
-		<div>
-			<h1>List of components</h1>
-			<div style={{ display: 'flex' }}>
-				<ul
-					style={{
-						borderRight: 1,
-						borderRightColor: 'black',
-						borderRightStyle: 'solid',
-						width: 150,
-					}}
-				>
-					{Object.keys(projectType).map((key) => (
-						<li key={key}>
-							<button
-								style={{
-									background: type === projectType[key] ? 'yellow' : 'white',
-									textTransform: 'capitalize',
-									marginBottom: 5,
-								}}
-								onClick={() => setType(projectType[key])}
-							>
-								{key}
-							</button>
-						</li>
-					))}
-				</ul>
-				<main style={{ padding: 20 }}>
-					{type === projectType.rating && <Rating />}
-					{type === projectType.dropdown && <Dropdown />}
-					{type === projectType.folder && <Folder />}
-					{type === projectType.countdown && <Countdown />}
-				</main>
+		<div id='toast-container'>
+			<div>
+				<h1>List of components</h1>
+				<div style={{ display: 'flex' }}>
+					<ul
+						style={{
+							borderRight: 1,
+							borderRightColor: 'black',
+							borderRightStyle: 'solid',
+							width: 150,
+						}}
+					>
+						{Object.keys(projectType).map((key) => (
+							<li key={key}>
+								<button
+									style={{
+										background: type === projectType[key] ? 'yellow' : 'white',
+										textTransform: 'capitalize',
+										marginBottom: 5,
+									}}
+									onClick={() => setType(projectType[key])}
+								>
+									{key}
+								</button>
+							</li>
+						))}
+					</ul>
+					<main style={{ padding: 20 }}>
+						{type === projectType.rating && <Rating />}
+						{type === projectType.dropdown && <Dropdown />}
+						{type === projectType.folder && <Folder />}
+						{type === projectType.countdown && <Countdown />}
+						{type === projectType.toast && <Toast />}
+						{type === projectType.tooltip && <Tooltip />}
+					</main>
+				</div>
 			</div>
 		</div>
 	);

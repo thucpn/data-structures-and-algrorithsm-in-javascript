@@ -1,0 +1,13 @@
+#toast-container {
+	position: relative;
+}
+
+.toast {
+	width: 200px;
+	background: lightgrey;
+	height: 50px;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 20px;
+}
