@@ -1,0 +1,18 @@
+#root {
+	display: flex;
+	align-items: center;
+}
+
+#container {
+	width: 500px;
+	margin: 0 20px;
+}
+
+#container img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.hide {
+	display: none;
+}

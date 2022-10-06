@@ -6,6 +6,7 @@ import Folder from './components/Folder';
 import Countdown from './components/Countdown';
 import Toast from './components/Toast';
 import Tooltip from './components/Tooltip';
+import Slider from './components/Slider';
 
 const projectType = {
 	rating: 'rating',
@@ -14,6 +15,7 @@ const projectType = {
 	countdown: 'countdown',
 	toast: 'toast',
 	tooltip: 'tooltip',
+	slider: 'slider',
 };
 
 function App() {
@@ -55,6 +57,7 @@ function App() {
 						{type === projectType.countdown && <Countdown />}
 						{type === projectType.toast && <Toast />}
 						{type === projectType.tooltip && <Tooltip />}
+						{type === projectType.slider && <Slider />}
 					</main>
 				</div>
 			</div>
