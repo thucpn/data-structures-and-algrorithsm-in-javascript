@@ -1,0 +1,22 @@
+.dropdown {
+	position: relative;
+}
+
+.dropdown-container {
+	position: absolute;
+	top: calc(100% + 5px);
+	width: 200px;
+	background: lightgray;
+	z-index: 9999;
+}
+.dropdown-item:hover {
+	background-color: #61dafb;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
