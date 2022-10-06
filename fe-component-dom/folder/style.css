@@ -1,0 +1,16 @@
+.indent {
+	margin-left: 20px;
+}
+
+body {
+	font-size: 20px;
+}
+
+h5 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.collapsed {
+	display: none;
+}

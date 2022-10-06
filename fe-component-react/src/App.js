@@ -2,19 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import Rating from './components/Rating';
 import Dropdown from './components/Dropdown';
-
-// Games Tic-tac-toe
-// Photo Gallery -> click vô hiện full
-// Search Autocomplete
-// New Feed
-// Slider component
-
-// star rating: https://www.algochurn.com/frontend/feedback-stars
-// dropdown component
-// folder struc: https://www.algochurn.com/frontend/folder-structure
-// toast and notifi: https://www.algochurn.com/frontend/toasts-and-notifications
-// tooltip component
-// countdown-timer: https://www.algochurn.com/frontend/countdown-timer
+import Folder from './components/Folder';
 
 const projectType = {
 	rating: 'rating',
@@ -59,6 +47,7 @@ function App() {
 				<main style={{ padding: 20 }}>
 					{type === projectType.rating && <Rating />}
 					{type === projectType.dropdown && <Dropdown />}
+					{type === projectType.folder && <Folder />}
 				</main>
 			</div>
 		</div>
