@@ -1,0 +1,40 @@
+input {
+	width: 800px;
+}
+
+#tags-container {
+	margin-top: 20px;
+}
+
+#container {
+}
+
+#dropdown-container {
+}
+
+.hide {
+	display: none;
+}
+
+#dropdown-container {
+	width: 300px;
+}
+
+p {
+	cursor: pointer;
+}
+
+p:hover {
+	background: lightblue;
+}
+
+span {
+	background: yellow;
+	padding: 5px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.active {
+	background: lightblue;
+}
